@@ -16,10 +16,17 @@ UI strings are trilingual (en/es/pt) in `src/lib/i18n.tsx`.
 
 ## Working with multiple Claude accounts
 
-This repo is worked on from two Claude accounts on one machine. Shared context lives
-here (this file, `.claude/settings.json`, `.claude/skills/`), not in per-account memory.
+This repo is worked on from two Claude accounts on one machine, taking turns in the same
+folder (`C:\Users\Marco\claude 2`). Shared context lives here (this file,
+`.claude/commands/`, `.claude/settings.json`, `.claude/skills/`), not in per-account memory.
 
-- Commit small and often; pull/check `git status` before starting a session.
-- Don't have both accounts editing the same working folder at once. Use a branch per
-  account, or a `git worktree`, and merge.
+The user is not comfortable with git. Claude does all git work and explains it in plain,
+non-technical language.
+
+- Routine: `/start` when opening a session (syncs with GitHub), `/save` when done
+  (commits and pushes). Both are in `.claude/commands/`.
+- At the start of any session, if there are uncommitted changes or the branch is behind
+  GitHub, tell the user in plain language and resolve it before starting new work.
+- Never force-push, reset, or discard changes without an explicit yes from the user.
+- Work on `main` directly; there are no long-lived branches.
 - `.claude/settings.local.json` is per-machine and gitignored.
