@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient-border: linear-gradient(135deg, #2f81ff, #a855f7);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #0a0c10;
+  color: #f5f6f8;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(47, 129, 255, 0.35);
+  color: #fff;
+}
+
+/* Visible keyboard focus ring, consistent across every interactive element */
+:focus-visible {
+  outline: 2px solid #5b9dff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Tap feedback on every plain button. A no-op on Framer Motion-controlled
+   buttons (GradientButton, Sidebar nav, quiz options) — their own inline
+   transform always wins over this class rule. */
+button:not(:disabled) {
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+button:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Slim, low-contrast scrollbars that fit a premium dark UI */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #23272f;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2f333d;
+}
+
+/* Animated gradient border, used by .gradient-border-hover */
+.gradient-border {
+  position: relative;
+  isolation: isolate;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgba(47, 129, 255, 0.9),
+    rgba(168, 85, 247, 0.9),
+    rgba(47, 129, 255, 0.9)
+  );
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+.gradient-border:hover::before,
+.gradient-border:focus-within::before {
+  opacity: 1;
+  animation: shimmer 3s linear infinite;
+}
