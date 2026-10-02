@@ -14,6 +14,12 @@ UI strings are trilingual (en/es/pt) in `src/lib/i18n.tsx`.
 - `src/lib/` — shared logic (i18n, usage stats, etc.)
 - Path alias `@/` maps to `src/`
 
+## Claude Code mods
+
+We are exploring Claude Code mods (plugins that add panes, status lines, commands, tool-call
+rules). Guides are in `docs/mods/` (start at `README.md`); our own mods go in `mods/<name>/`.
+Mods run code on the machine, so read third-party ones before installing.
+
 ## Working with multiple Claude accounts
 
 This repo is worked on from two Claude accounts on one machine, taking turns in the same

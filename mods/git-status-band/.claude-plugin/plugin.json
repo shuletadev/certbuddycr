@@ -1,0 +1,7 @@
+{
+  "name": "git-status-band",
+  "version": "0.1.0",
+  "description": "A band above the prompt that says in plain words whether your work is saved and in sync with GitHub",
+  "author": { "name": "shuletadev" },
+  "types": "./types/index.d.ts"
+}
