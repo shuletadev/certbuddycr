@@ -17,7 +17,9 @@ with the app's copy:
     & "$env:APPDATA\Claude\claude-code\2.1.286\<hash>\claude.exe" plugin validate mods/<name>
 
 (`<hash>` is the folder inside the version folder; the version number changes with app updates.)
-Upgrading the npm CLI (`npm i -g @anthropic-ai/claude-code`) would also fix it.
+Upgrading the npm CLI (`npm i -g @anthropic-ai/claude-code`) also fixes it. **Done on this machine
+on 2026-10-02: the CLI is now 2.1.288 and validates all our mods.** The other account/machine may
+still need the same update; check with `claude --version` (needs 2.1.287 or newer).
 
 **Validator rule:** `$` may only be passed to functions declared at the top level of the file,
 not to functions nested inside `register`.

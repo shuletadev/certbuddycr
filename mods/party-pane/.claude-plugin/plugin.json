@@ -1,0 +1,7 @@
+{
+  "name": "party-pane",
+  "version": "0.1.0",
+  "description": "A side pane that shows the agents working on your requests as illustrated characters",
+  "author": { "name": "shuletadev" },
+  "types": "./types/index.d.ts"
+}

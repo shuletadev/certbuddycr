@@ -9,6 +9,7 @@ Shared notes for both Claude accounts. Written 2026-10-02, the day after mods we
 | [02-source-review.md](02-source-review.md) | Review of the three sources + other free repos, license and cost check |
 | [03-workflow.md](03-workflow.md) | How we build mods together from two accounts, step by step |
 | [04-ideas-and-inspiration.md](04-ideas-and-inspiration.md) | Idea backlog, inspiration, where to look for more |
+| [05-filetree-review.md](05-filetree-review.md) | Code review of the filetree mod: safe, install it, techniques to borrow |
 
 ## One-paragraph summary
 
